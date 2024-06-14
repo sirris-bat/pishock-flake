@@ -12,8 +12,15 @@
       in {
         packages.default = with pkgs.python3Packages;
           buildPythonPackage rec {
-            propagatedBuildInputs =
-              [ requests platformdirs rich typer typing-extensions pyserial ];
+            propagatedBuildInputs = [
+              requests
+              platformdirs
+              rich
+              typer
+              typing-extensions
+              pyserial
+              pkgs.esptool
+            ];
 
             pname = "pishock";
             version = "1.0.3";
